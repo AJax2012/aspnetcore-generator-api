@@ -7,11 +7,11 @@ services:
       - teamcity-server-datadir:/data/teamcity_server/datadir
       - teamcity-server-logs:/opt/teamcity/logs
     ports:
-      - 8111:8111
+      - 81:81
   teamcity-agent:
     image: jetbrains/teamcity-agent:2019.1.2
     environment: 
-      SERVER_URL: http://teamcity:8111
+      SERVER_URL: http://teamcity:81
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
 
